@@ -19,13 +19,15 @@ Production observability with Prometheus, Grafana, and Alertmanager. Multi-chann
 
 ### [Kubernetes on AWS](https://github.com/TheYemi/kubernetes-demo)
 Self-managed K8s cluster (kubeadm) on AWS featuring:
-- 3-tier application (Frontend → API → Redis with persistent storage)
-- Canal CNI for networking + Network Policy enforcement
-- Pod-to-pod traffic isolation with NetworkPolicies
-- In-cluster monitoring (Prometheus, Grafana, Node Exporter as DaemonSet)
-- ConfigMaps, Secrets, PersistentVolumes
-- Services (ClusterIP, NodePort) with ALB external access
-- Terraform infrastructure + Ansible automation via SSM
+- 3-tier application (Frontend → API → Redis) with namespace isolation
+- GitOps deployment with ArgoCD (app-of-apps pattern)
+- CI/CD pipeline (GitHub Actions → Docker Hub → ArgoCD) with Trivy vulnerability scanning
+- RBAC, Sealed Secrets, Network Policies for security
+- HPA autoscaling with metrics-server
+- Monitoring stack (Prometheus, Grafana, Alertmanager)
+- Terraform infrastructure + Ansible provisioning via SSM
+
+
 
 ### [Infrastructure Provisioning](https://github.com/TheYemi/terraform-and-ansible)
 Terraform modules with remote state (S3 + DynamoDB locking). Ansible playbooks with Vault-encrypted secrets.
